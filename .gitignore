@@ -61,3 +61,53 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+
+
+# Ignoring gh-pages branch for documentation
+_site/
+
+# General
+# =======
+*.log
+*.csv
+*.dat
+*.out
+*.pid
+*.gz
+*.tmp
+*.bak
+*.swp
+logs/
+build/
+
+# Sublime editor
+# ==============
+.sublime-project
+*.sublime-project
+*.sublime-workspace
+
+# Eclipse project files
+# =====================
+.project
+.settings/
+.*.md.html
+.metadata
+*~.nib
+local.properties
+
+# IntelliJ
+# ========
+*.iml
+
+# Cloud9 IDE
+# =========
+.c9/
+data/
+mongod
+
+# Visual Studio
+# =========
+*.suo
+*.ntvs*
+*.njsproj
+*.sln

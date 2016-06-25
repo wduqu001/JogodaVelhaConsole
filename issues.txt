@@ -1,0 +1,69 @@
+Natanael 
+então, mas eu acho q os controles do mapa deviam estar no mapa tmb
+tipo, "slotAvaliable"
+
+Willian
+mas o newmove continua em movement né ?
+
+Natanael 
+então, acho q não tmb
+eu penso de uma forma diferente
+vc deveria ter uma classe "Game" (ou algo assim) que gerencia as 
+coordenadas dos jogadores
+essa classe teria o "newMove"
+*alias, o newMove ficaria no Draw
+ai eu passo pra ele ('X', 1, 1) por exemplo
+q seria onde eu quero colocar o X
+
+Willian 
+sim pelo getmoves, que pelo que entendi ficaria no game
+
+Natanael 
+é, na vdd essa classe Game seria a msm de Movement, só acho q o nome dela ta meio estranho
+
+Willian 
+blz, eu mudo. eu criei com esse nome mas por causa de ela controlar as coordenadas e verificar quando o jogo acaba. Mas entendo a confusao
+
+Natanael 
+e eu separaria o demoMode em outro método
+
+Willian 
+eu tinha feito isso inicialmente, mas ele é tão igual ao getmoves, que pareceu redundancia
+mas entendo que se fosse um projeto maior, pelo reuso de codigo eu precisaria separa-los
+
+Natanael 
+vc poderia refatorar oq é igual pra outro método
+
+Willian 
+refatorar ?
+
+Natanael 
+separar em outro método ... tipo,
+if(xCount + oCount > 7) {//Check if the game is tied
+isso poderia ficar no CheckVictory tmb, não ?
+
+Natanael 
+e acredito q isso
+if (x >= bdSize || y >= bdSize) {
+                    System.out.println("Wrong value!! Please use the format: x y and only values 0-2");
+                    throw new IOException("Wrong coordinates!");
+                    //return;
+                }
+não acontece no demomode
+
+Willian 
+sim, não acontece no demomode, pois no modo de demostração todos os inputs estão dento do formato correto
+
+Natanael 
+e outra coisa (ok, não vai acontecer num jogo da velha, mas...), pensando numa visão puramente orientada à objetos, o certo seria criar uma interface IDraw e Draw implementar essa interface
+dessa forma, teoricamente, vc poderia trocar o board por um outro
+
+Willian 
+da forma que está, vc só precisa trocar o valor do bdsize no Draw. E o tamanho do board muda
+
+Natanael 
+o que eu sempre tento considerar quando eu vou desenvolver alguma coisa é se está fácil de trocar de plataforma
+por exemplo, vc fez seu jogo da velha totalmente console
+se quisesse colocar na web, teria q reescrever quase todo o código
+vc poderia pensar em algo assim tmb pras próximas alterações
+tipo, desacoplar o desenho das "telas" da lógica da aplicação
